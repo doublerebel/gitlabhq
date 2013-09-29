@@ -154,6 +154,8 @@ GEM
     fssm (0.2.10)
     gemoji (1.2.1)
     gherkin-ruby (0.3.0)
+    gitable (0.3.1)
+      addressable (>= 2.2.7)
     github-linguist (2.3.4)
       charlock_holmes (~> 0.6.6)
       escape_utils (~> 0.2.3)
@@ -567,6 +569,7 @@ DEPENDENCIES
   font-awesome-rails
   foreman
   gemoji (~> 1.2.1)
+  gitable (~> 0.3.1)
   github-linguist
   github-markup (~> 0.7.4)
   gitlab-gollum-lib (~> 1.0.1)
