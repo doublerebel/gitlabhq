@@ -25,6 +25,7 @@
 #
 
 require "grit"
+require "gitable/uri"
 
 class Project < ActiveRecord::Base
   include Gitlab::ShellAdapter
@@ -88,9 +89,7 @@ class Project < ActiveRecord::Base
   validates_uniqueness_of :name, scope: :namespace_id
   validates_uniqueness_of :path, scope: :namespace_id
 
-  validates :import_url,
-    format: { with: URI::regexp(%w(git http https)), message: "should be a valid url" },
-    if: :import?
+  validate :valid_git_uri
 
   validate :check_limit, on: :create
 
@@ -148,6 +147,14 @@ class Project < ActiveRecord::Base
 
   def saved?
     id && persisted?
+  end
+
+  def valid_git_uri
+    if :import?
+      unless Gitable::URI.parse_when_valid(import_url)
+        errors[:import_url] << ("should be a valid Git url")
+      end
+    end
   end
 
   def import?
