@@ -159,6 +159,8 @@ GEM
       rugged (~> 0.19)
     gherkin-ruby (0.3.1)
       racc
+    gitable (0.3.1)
+      addressable (>= 2.2.7)
     github-markup (1.1.0)
     gitlab-flowdock-git-hook (0.4.2.2)
       gitlab-grit (>= 2.4.1)
@@ -598,6 +600,7 @@ DEPENDENCIES
   font-awesome-rails (~> 3.2)
   foreman
   gemnasium-gitlab-service (~> 0.2)
+  gitable (~> 0.3.1)
   github-markup
   gitlab-flowdock-git-hook (~> 0.4.2)
   gitlab-grack (~> 2.0.0.pre)

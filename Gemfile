@@ -146,6 +146,9 @@ gem "underscore-rails", "~> 1.4.4"
 # Sanitize user input
 gem "sanitize", '~> 2.0'
 
+# Parse git URIs
+gem "gitable", "~> 0.3.1"
+
 # Protect against bruteforcing
 gem "rack-attack"
 
